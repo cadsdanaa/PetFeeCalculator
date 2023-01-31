@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pet Fee Calculator</string>
+    <string name="calculate">Calculate</string>
+    <string name="startDate">Start Date</string>
+    <string name="endDate">End Date</string>
+    <string name="extraAnimals">Extra Animals</string>
+    <string name="transports">Transports</string>
+</resources>
