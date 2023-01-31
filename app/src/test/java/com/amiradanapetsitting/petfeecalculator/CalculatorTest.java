@@ -1,4 +1,4 @@
-package com.example.petfeecalculator;
+package com.amiradanapetsitting.petfeecalculator;
 
 import androidx.core.util.Pair;
 import org.junit.Test;
