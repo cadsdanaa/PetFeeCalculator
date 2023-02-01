@@ -4,13 +4,11 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
+import com.shawnlin.numberpicker.NumberPicker;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -59,37 +57,14 @@ public class MainActivity extends AppCompatActivity {
                         endCalendar.get(Calendar.DAY_OF_MONTH))
                         .show());
 
-        EditText extraAnimals = findViewById(R.id.input_ExtraPets);
-        extraAnimals.setText("0");
-        extraAnimals.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.length() != 0) {
-                    numberOfExtraAnimals = Integer.parseInt(s.toString());
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {}
+        NumberPicker extraAnimals = findViewById(R.id.input_extraPets);
+        extraAnimals.setOnValueChangedListener((picker, oldVal, newVal) -> {
+            numberOfExtraAnimals = newVal;
         });
-        EditText transports = findViewById(R.id.input_transports);
-        transports.setText("0");
-        transports.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.length() != 0) {
-                    transportNumber = Integer.parseInt(s.toString());
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {}
+        NumberPicker transports = findViewById(R.id.input_transports);
+        transports.setOnValueChangedListener((picker, oldVal, newVal) -> {
+            transportNumber = newVal;
         });
 
         Button calculateButton = findViewById(R.id.btn_calculate);
