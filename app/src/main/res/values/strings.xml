@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Pet Fee Calculator</string>
-    <string name="rateTitle">In-Home Calculator</string>
+    <string name="rateTitle">In My Home Fee Calculator</string>
     <string name="calculate">Calculate</string>
     <string name="startDate">Start Date</string>
     <string name="endDate">End Date</string>

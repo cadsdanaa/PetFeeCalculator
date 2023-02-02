@@ -3,9 +3,11 @@ package com.amiradanapetsitting.petfeecalculator;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
 import com.shawnlin.numberpicker.NumberPicker;
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             Pair<Integer, Integer> tenToTwentyFourHourPeriods = calculator.get10To24HourPeriods(totalHours);
             Pair<Integer, Integer> fiveToTenHourPeriods = calculator.getRemaining5To10HourPeriods(tenToTwentyFourHourPeriods.second);
             Pair<Integer, Integer> oneToFiveHourPeriods = calculator.getRemaining0To5HourPeriods(fiveToTenHourPeriods.second);
-            builder.setTitle("Total: $" + calculator.calculateTotal(
+            builder.setTitle("Total Bill: $" + calculator.calculateTotal(
                     tenToTwentyFourHourPeriods.first,
                     fiveToTenHourPeriods.first,
                     oneToFiveHourPeriods.first,
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     numberOfExtraAnimals,
                     transportNumber
             ));
+            builder.setPositiveButton("OK", null);
             builder.create().show();
         });
 
