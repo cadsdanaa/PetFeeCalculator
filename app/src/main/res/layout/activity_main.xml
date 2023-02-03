@@ -38,30 +38,33 @@
             <Button
                     android:text="@string/startDate"
                     android:id="@+id/btn_startTimePicker"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginTop="25dp"/>
             <TextView
                     android:id="@+id/text_startDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/dark_gray"
+                    android:layout_weight="1"
                     android:layout_marginTop="25dp"/>
         </TableRow>
         <TableRow>
             <Button
                     android:text="@string/endDate"
                     android:id="@+id/btn_endTimePicker"
-                    android:layout_width="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginTop="25dp"/>
             <TextView
                     android:id="@+id/text_endDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/dark_gray"
+                    android:layout_weight="1"
                     android:layout_marginTop="25dp"/>
         </TableRow>
         <TableRow>
@@ -75,7 +78,10 @@
             <EditText
                     android:id="@+id/input_extraPets"
                     android:layout_width="wrap_content"
+                    android:textColor="@color/dark_gray"
+                    app:backgroundTint="@color/dark_gray"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="240dp"
                     android:inputType="number"/>
         </TableRow>
         <TableRow>
@@ -88,8 +94,11 @@
                     android:layout_height="wrap_content"/>
             <EditText
                     android:id="@+id/input_transports"
+                    android:textColor="@color/dark_gray"
+                    app:backgroundTint="@color/dark_gray"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="240dp"
                     android:inputType="number"/>
         </TableRow>
         <TableRow>
