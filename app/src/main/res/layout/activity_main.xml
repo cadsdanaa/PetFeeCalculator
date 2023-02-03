@@ -13,9 +13,10 @@
         <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 app:title="@string/app_name"
+                app:titleTextColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"/>
+                android:background="@color/purple_200"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <TableLayout
@@ -27,6 +28,7 @@
         <TableRow android:paddingTop="50dp">
             <TextView
                     android:text="@string/rateTitle"
+                    android:textColor="@color/dark_gray"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
@@ -66,51 +68,29 @@
             <TextView
                     android:id="@+id/text_extraAnimals"
                     android:text="@string/extraAnimals"
+                    android:textColor="@color/dark_gray"
                     android:textStyle="bold"
-                    android:layout_marginTop="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-            <com.shawnlin.numberpicker.NumberPicker
+            <EditText
                     android:id="@+id/input_extraPets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:np_width="100dp"
-                    app:np_height="50dp"
-                    app:np_accessibilityDescriptionEnabled="true"
-                    app:np_dividerColor="@color/black"
-                    app:np_max="10"
-                    app:np_min="0"
-                    app:np_order="ascending"
-                    app:np_orientation="horizontal"
-                    app:np_selectedTextColor="@color/black"
-                    app:np_fadingEdgeEnabled="false"
-                    app:np_wrapSelectorWheel="false"
-                    app:np_dividerType="underline" />
+                    android:inputType="number"/>
         </TableRow>
         <TableRow>
             <TextView
                     android:id="@+id/text_transports"
                     android:text="@string/transports"
+                    android:textColor="@color/dark_gray"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"/>
-            <com.shawnlin.numberpicker.NumberPicker
+                    android:layout_height="wrap_content"/>
+            <EditText
                     android:id="@+id/input_transports"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:np_width="100dp"
-                    app:np_height="50dp"
-                    app:np_accessibilityDescriptionEnabled="true"
-                    app:np_dividerColor="@color/black"
-                    app:np_max="10"
-                    app:np_min="0"
-                    app:np_order="ascending"
-                    app:np_orientation="horizontal"
-                    app:np_selectedTextColor="@color/black"
-                    app:np_fadingEdgeEnabled="false"
-                    app:np_wrapSelectorWheel="false"
-                    app:np_dividerType="underline" />
+                    android:inputType="number"/>
         </TableRow>
         <TableRow>
             <Button

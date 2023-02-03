@@ -5,12 +5,14 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.Pair;
-import com.shawnlin.numberpicker.NumberPicker;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -42,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
                         startCalendar.get(Calendar.MONTH),
                         startCalendar.get(Calendar.DAY_OF_MONTH))
                         .show());
+        TextView startDateText = findViewById(R.id.text_startDate);
+        startDateText.setOnClickListener(view ->
+                new DatePickerDialog(
+                        MainActivity.this,
+                        startDateListener,
+                        startCalendar.get(Calendar.YEAR),
+                        startCalendar.get(Calendar.MONTH),
+                        startCalendar.get(Calendar.DAY_OF_MONTH))
+                        .show());
 
         Button endButton = findViewById(R.id.btn_endTimePicker);
         DatePickerDialog.OnDateSetListener endDateListener = (view, year, month, day) -> {
@@ -58,15 +69,50 @@ public class MainActivity extends AppCompatActivity {
                         endCalendar.get(Calendar.MONTH),
                         endCalendar.get(Calendar.DAY_OF_MONTH))
                         .show());
+        TextView endDateText = findViewById(R.id.text_endDate);
+        endDateText.setOnClickListener(view ->
+                new DatePickerDialog(
+                        MainActivity.this,
+                        endDateListener,
+                        endCalendar.get(Calendar.YEAR),
+                        endCalendar.get(Calendar.MONTH),
+                        endCalendar.get(Calendar.DAY_OF_MONTH))
+                        .show());
 
-        NumberPicker extraAnimals = findViewById(R.id.input_extraPets);
-        extraAnimals.setOnValueChangedListener((picker, oldVal, newVal) -> {
-            numberOfExtraAnimals = newVal;
+        EditText extraAnimals = findViewById(R.id.input_extraPets);
+        extraAnimals.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length() > 0) {
+                    numberOfExtraAnimals = Integer.parseInt(s.toString());
+                } else {
+                    numberOfExtraAnimals = 0;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
         });
 
-        NumberPicker transports = findViewById(R.id.input_transports);
-        transports.setOnValueChangedListener((picker, oldVal, newVal) -> {
-            transportNumber = newVal;
+        EditText transports = findViewById(R.id.input_transports);
+        transports.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length() > 0) {
+                    transportNumber = Integer.parseInt(s.toString());
+                } else {
+                    transportNumber = 0;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
         });
 
         Button calculateButton = findViewById(R.id.btn_calculate);
